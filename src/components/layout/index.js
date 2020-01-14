@@ -12,8 +12,16 @@ const iconStyle = {
   width: 20,
   cursor: 'pointer',
 }
+
+const activeStyle = key => {
+  if (typeof window !== `undefined`) {
+    return window.location.pathname.includes(key);
+  }
+  return false
+}
+
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-const Layout = ({ children, path }) => {
+const Layout = ({ children }) => {
   const [full, setFull] = useState(false);
   const [iconHover, setIconHover] = useState(false);
   const [menuHover, setMenuHover] = useState('');
@@ -47,7 +55,7 @@ const Layout = ({ children, path }) => {
           </div>
           <div className='menu-container'>
             <section
-              style={{ border: path.includes('home') && menuHover !== 'home' ? '1px solid #8888FA' : '' }}
+              style={{ border: activeStyle('home') && menuHover !== 'home' ? '1px solid #8888FA' : '' }}
               onMouseEnter={() => setMenuHover('home')}
               onMouseLeave={() => setMenuHover('')}
               onClick={() => navigate('/home/')}
@@ -58,7 +66,7 @@ const Layout = ({ children, path }) => {
               <span>首页</span>
             </section>
             <section
-              style={{ border: path.includes('garden') && menuHover !== 'garden' ? '1px solid #8888FA' : '' }}
+              style={{ border: activeStyle('garden') && menuHover !== 'garden' ? '1px solid #8888FA' : '' }}
               onMouseEnter={() => setMenuHover('garden')}
               onMouseLeave={() => setMenuHover('')}
               onClick={() => navigate('/garden/')}
@@ -75,7 +83,7 @@ const Layout = ({ children, path }) => {
               <span>花园</span>
             </section>
             <section
-              style={{ border: path.includes('list') && menuHover !== 'list' ? '1px solid #8888FA' : '' }}
+              style={{ border: activeStyle('list') && menuHover !== 'list' ? '1px solid #8888FA' : '' }}
               onMouseEnter={() => setMenuHover('list')}
               onMouseLeave={() => setMenuHover('')}
               onClick={() => navigate('/list/')}
@@ -86,7 +94,7 @@ const Layout = ({ children, path }) => {
               <span>列表</span>
             </section>
             <section
-              style={{ border: path.includes('repo') && menuHover !== 'repo' ? '1px solid #8888FA' : '' }}
+              style={{ border: activeStyle('repo') && menuHover !== 'repo' ? '1px solid #8888FA' : '' }}
               onMouseEnter={() => setMenuHover('repo')}
               onMouseLeave={() => setMenuHover('')}
               onClick={() => navigate('/repo/')}
