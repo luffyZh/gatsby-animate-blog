@@ -654,13 +654,14 @@ pre tt:after {
   flex: 0 0 300px;
   display: flex;
   flex-direction: column;
-  background-color: #EaEaFA;
+  background-color: #EAEAFA;
 }
 
 .main-container {
   position: relative;
   flex: 1;
   background-color: #d8d8FA;
+  padding: 26px;
 }
 
 .full-panel {
