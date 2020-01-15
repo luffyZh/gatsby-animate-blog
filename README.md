@@ -18,17 +18,25 @@ The demo deploy by now.
 
 U just need clone project in your repo. Then write the article with markdown file in `posts` folder.
 
+> It is recommended that you install gatsby-cli before you begin
+
 ```
 # Step1
 git clone https://github.com/luffyZh/gatsby-animate-blog
 
 # Step2
-yarn install
+yarn install | npm i
 
 # Step3
 create new .md file in posts folder
 
 # Step4
-dev: yarn start
-deploy: now
+
+dev: gatsby develop                   // http://localhost:8000
+
+prod: gatsby build && gatsby serve    // http://localhost:9000
+
+deploy: now                           // https://[project-name].[yourname].now.sh
 ```
+
+More questions u can PR | Issue | Star, Thanks~
