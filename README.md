@@ -22,15 +22,12 @@ U just need clone project in your repo. Then write the article with markdown fil
 
 ```
 # Step1
-git clone https://github.com/luffyZh/gatsby-animate-blog
+npm install
 
 # Step2
-yarn install | npm i
-
-# Step3
 create new .md file in posts folder
 
-# Step4
+# Step3
 
 dev: gatsby develop                   // http://localhost:8000
 
